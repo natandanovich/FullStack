@@ -12,8 +12,8 @@ app.get('/routing', function (req,res) {
 });
 
 app.listen(port, function (err) {
-    if (err.message != '') {
-      console.log(err.message)
+    if (err) {
+      console.log(err)
     }
     console.log('The server is running on port: ' + port);
 });
