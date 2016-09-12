@@ -20,11 +20,11 @@ gulp.task('inject', function () {
  var inject = require('gulp-inject');
  var injectSrc = gulp.src(['./public/css/*.css','./public/js/*.js']);
  var injectOptions = {
-  ignorePath: './public'
+  ignorePath: '/public'
  };
 
  return gulp.src('./src/views/*.html')
      .pipe(wiredep(options))
-     .pipe(inject(injectSrc))
+     .pipe(inject(injectSrc,injectOptions))
      .pipe(gulp.dest('./src/views'));
 });
