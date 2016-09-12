@@ -9,6 +9,7 @@ gulp.task('style', function () {
 });
 
 gulp.task('inject', function () {
+
  var wiredep = require('wiredep').stream;
  var options = {
   bowerJson: require('./bower.json'),
@@ -16,5 +17,14 @@ gulp.task('inject', function () {
   ignorePath: '../../bower_components'
  };
 
- return gulp.src('./src/views/*.html').pipe(wiredep(options)).pipe(gulp.dest('./src/views'));
+ var inject = require('gulp-inject');
+ var injectSrc = gulp.src(['./public/css/*.css','./public/js/*.js']);
+ var injectOptions = {
+  ignorePath: './public'
+ };
+
+ return gulp.src('./src/views/*.html')
+     .pipe(wiredep(options))
+     .pipe(inject(injectSrc))
+     .pipe(gulp.dest('./src/views'));
 });
