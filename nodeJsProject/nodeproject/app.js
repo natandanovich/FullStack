@@ -3,6 +3,7 @@ var app = express();
 
 var port = 3000;
 var eventRouter = require('./src/routes/eventRoutes');
+var dbRout
 
 app.use(express.static('public'));
 app.use(express.static('bower_components'));
