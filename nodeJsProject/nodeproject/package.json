@@ -8,7 +8,8 @@
     "async": "~0.2.8",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
-    "mongodb": "^2.2.9",
+    "gulp": "^3.9.1",
+    "mongodb": "^2.2.10",
     "socket.io": "~0.9.14"
   },
   "scripts": {
